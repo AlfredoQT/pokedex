@@ -47,5 +47,6 @@ class PokemonDetailsVC: UIViewController {
         heightLbl.text = pokemon.height
         weightLbl.text = pokemon.weight
         baseAttackLbl.text = pokemon.attack
+        typeLbl.text = pokemon.type
     }
 }

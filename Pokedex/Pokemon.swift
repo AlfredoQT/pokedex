@@ -100,6 +100,19 @@ class Pokemon {
                 if let defense = dict["defense"] as? Int {
                     self._defense = "\(defense)"
                 }
+                if let types = dict["types"] as? [Dictionary<String, String>], types.count > 0 {
+                    var typesStr = ""
+                    for type in types {
+                        if let name = type["name"] {
+                            typesStr += "\(name.capitalized)/"
+                        }
+                    }
+                    typesStr.remove(at: typesStr.index(before: typesStr.endIndex))
+                    self._type = typesStr
+                }
+                else {
+                    self._type = ""
+                }
             }
             completed()
         }
